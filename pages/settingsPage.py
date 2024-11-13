@@ -10,8 +10,8 @@ class SettingsPage(QWidget):
         self.language_manager = LanguageManager()
         self.page_manager = pageManager
         
-        self.label = Label("settings_title_text")
-        self.button = Button("save_button")
+        self.label = Label("title")
+        self.button = Button("save")
 
         self.button.clicked.connect(lambda: self.page_manager.navigate_to("home"))
     

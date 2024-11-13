@@ -1,6 +1,18 @@
 {
-    "home_welcome_text": "Dobrodošli na početnu stranicu!",
-    "click_me_button": "Klikni me!",
-    "settings_title_text": "Postavke",
-    "save_button": "Spremi"
+    "home": {
+        "label": {
+            "welcome": "Dobrodošli na početnu stranicu!"
+        },
+        "button": {
+            "click_me": "Klikni me!"
+        }
+    },
+    "settings": {
+        "label": {
+            "title": "Postavke"
+        },
+        "button": {
+            "save": "Spremi"
+        }
+    }
 }

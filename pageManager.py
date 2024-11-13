@@ -14,12 +14,12 @@ class PageManager(QStackedWidget):
     def navigate_to(self, page_name):
         if page_name in self.pages:
             self.setCurrentWidget(self.pages[page_name])
-            self.register_widgets_on_page(self.pages[page_name])
+            self.register_widgets_on_page(self.pages[page_name], page_name)
         else:
             raise ValueError(f"Page '{page_name}' not found.")
 
-    def register_widgets_on_page(self, page):
+    def register_widgets_on_page(self, page, page_name):
         self.language_manager.reset_widgets()
         for widget in page.findChildren(QWidget):
             if hasattr(widget, 'text_key'):
-                self.language_manager.register_widget(widget, widget.text_key)
+                self.language_manager.register_widget(widget, page_name)

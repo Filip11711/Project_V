@@ -1,6 +1,18 @@
 {
-    "home_welcome_text": "Welcome to the home page!",
-    "click_me_button": "Click me!",
-    "settings_title_text": "Settings",
-    "save_button": "Save"
+    "home": {
+        "label": {
+            "welcome": "Welcome to the home page!"
+        },
+        "button": {
+            "click_me": "Click me!"
+        }
+    },
+    "settings": {
+        "label": {
+            "title": "Settings"
+        },
+        "button": {
+            "save": "Save"
+        }
+    }
 }

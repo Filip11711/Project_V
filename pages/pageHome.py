@@ -10,8 +10,8 @@ class HomePage(QWidget):
         self.language_manager = LanguageManager()
         self.page_manager = pageManager
         
-        self.label = Label("home_welcome_text")
-        self.button = Button("click_me_button")
+        self.label = Label("welcome")
+        self.button = Button("click_me")
 
         self.button.clicked.connect(lambda: self.page_manager.navigate_to("settings"))
     

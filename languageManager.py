@@ -22,9 +22,9 @@ class LanguageManager:
             with open(os.path.join("languages", "en.json"), "r", encoding="utf-8") as file:
                 return json.load(file)
 
-    def register_widget(self, widget, text_key):
-        self.widgets.append((widget, text_key))
-        self.apply_language_to_widget(widget, text_key)
+    def register_widget(self, widget, page_name):
+        self.widgets.append((widget, page_name))
+        self.apply_language_to_widget(widget, page_name)
 
     def change_language(self, language_code):
         self.current_language = language_code
@@ -32,12 +32,11 @@ class LanguageManager:
         self.apply_language()
 
     def apply_language(self):
-        for widget, text_key in self.widgets:
-            self.apply_language_to_widget(widget, text_key)
+        for widget, page_name in self.widgets:
+            self.apply_language_to_widget(widget, page_name)
 
-    def apply_language_to_widget(self, widget, text_key):
-        if text_key in self.translations:
-            getattr(widget, "setText")(self.translations[text_key])
+    def apply_language_to_widget(self, widget, page_name):
+        getattr(widget, "setText")(self.translations[page_name][widget.type][widget.text_key])
 
     def reset_widgets(self):
         self.widgets = []
