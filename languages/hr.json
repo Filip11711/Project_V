@@ -1,4 +1,8 @@
 {
+    "meta": {
+        "language": "Hrvatski",
+        "code": "hr"
+    },
     "home": {
         "label": {
             "welcome": "Dobrodošli na početnu stranicu!"

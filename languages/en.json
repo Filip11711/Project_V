@@ -1,4 +1,8 @@
 {
+    "meta": {
+        "language": "English",
+        "code": "en"
+    },
     "home": {
         "label": {
             "welcome": "Welcome to the home page!"

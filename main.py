@@ -16,8 +16,9 @@ class MainWindow(QMainWindow):
         self.page_manager.navigate_to("home")
 
         self.language_selector = QComboBox()
-        self.language_selector.addItem("English", "en")
-        self.language_selector.addItem("Hrvatski", "hr")
+        for language_code in self.language_manager.translations.keys():
+            language = self.language_manager.translations[language_code]["meta"]["language"]
+            self.language_selector.addItem(language, language_code)
         self.language_selector.currentIndexChanged.connect(self.change_language)
 
         central_widget = QWidget()
@@ -28,6 +29,8 @@ class MainWindow(QMainWindow):
         
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
+
+        self.language_manager.fill_language_files(self.page_manager)
     
     def change_language(self, index):
         language_code = self.language_selector.currentData()
